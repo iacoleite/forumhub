@@ -1,8 +1,5 @@
 package com.iaco.forumhub.domain.topico;
 
-import com.iaco.forumhub.domain.curso.Curso;
-import com.iaco.forumhub.domain.usuario.Usuario;
-
 import java.time.LocalDateTime;
 
 public record DadosDetalhamentoTopico(Long id,

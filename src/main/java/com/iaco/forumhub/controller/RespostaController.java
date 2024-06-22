@@ -33,11 +33,6 @@ public class RespostaController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @Autowired
-    private TokenService tokenService;
-
-    @Autowired
-    private TopicoService topicoService;
 
     @PostMapping
     @Transactional

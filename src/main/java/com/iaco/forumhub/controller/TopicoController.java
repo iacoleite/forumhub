@@ -5,7 +5,6 @@ import com.iaco.forumhub.domain.ValidacaoException;
 import com.iaco.forumhub.domain.curso.CursoRepositorio;
 import com.iaco.forumhub.domain.topico.*;
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
-import com.iaco.forumhub.infra.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -35,12 +34,6 @@ public class TopicoController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-
-    @Autowired
-    private TokenService tokenService;
-
-    @Autowired
-    private TopicoService topicoService;
 
     @PostMapping
     @Transactional

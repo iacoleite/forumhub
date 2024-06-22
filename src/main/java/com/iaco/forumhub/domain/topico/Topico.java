@@ -60,7 +60,8 @@ public class Topico {
         this.ativo = false;
     }
 
+    // usado para excluir do DB o topico caso nao queira usar exclusao logica
     public void deleteById(Long id) {
-
     }
+
 }

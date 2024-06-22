@@ -1,7 +1,5 @@
 package com.iaco.forumhub.domain.usuario;
 
-import com.iaco.forumhub.domain.topico.Topico;
-
 public record UsuarioDetalhes (
         Long id,
         String nome,

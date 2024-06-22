@@ -1,7 +1,6 @@
 package com.iaco.forumhub.domain.topico;
 
 import com.iaco.forumhub.domain.resposta.DadosRespostaTopico;
-import com.iaco.forumhub.domain.usuario.Usuario;
 
 import java.time.LocalDateTime;
 import java.util.List;
