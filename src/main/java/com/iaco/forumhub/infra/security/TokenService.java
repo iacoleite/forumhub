@@ -1,4 +1,4 @@
-package com.iaco.forumhub.infra;
+package com.iaco.forumhub.infra.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

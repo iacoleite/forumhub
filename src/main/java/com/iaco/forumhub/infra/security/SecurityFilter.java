@@ -1,4 +1,4 @@
-package com.iaco.forumhub.infra;
+package com.iaco.forumhub.infra.security;
 
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
 import jakarta.servlet.FilterChain;

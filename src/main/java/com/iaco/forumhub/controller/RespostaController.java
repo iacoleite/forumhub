@@ -6,8 +6,8 @@ import com.iaco.forumhub.domain.resposta.RespostaRepository;
 import com.iaco.forumhub.domain.resposta.DadosNovaResposta;
 import com.iaco.forumhub.domain.resposta.Resposta;
 import com.iaco.forumhub.domain.topico.*;
+import com.iaco.forumhub.domain.usuario.AuthenticationService;
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
-import com.iaco.forumhub.infra.TokenService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @SecurityRequirement(name = "bearer-key")
 @RestController
 @RequestMapping("/respostas")
 public class RespostaController {
+    @Autowired
+    private AuthenticationService authenticationService;
+
+    @Autowired
+    private TopicoService topicoService;
+
     @Autowired
     private TopicoRepository topicoRepository;
 
@@ -40,13 +47,8 @@ public class RespostaController {
     @Transactional
     public ResponseEntity responderTopico(@RequestBody @Valid DadosNovaResposta dadosNovaResposta,
                                           UriComponentsBuilder builder, Authentication authentication) {
-        String email = authentication.getName();
-        System.out.println(email);
-        var usuario = usuarioRepository.getReferenceByEmail(email);
-        var topico = topicoRepository.findById(dadosNovaResposta.topico());
-        if (topico.isEmpty()) {
-            throw new ValidacaoException("Tópico não encontrado.");
-        }
+        var usuario = authenticationService.getUsuario(authentication);
+        var topico = topicoService.getTopico(dadosNovaResposta);
 
         var resposta = new Resposta(null, dadosNovaResposta.mensagem(), topico.get(), LocalDateTime.now(), usuario, false);
 
@@ -55,4 +57,6 @@ public class RespostaController {
         var dto = new DadosDetalhamentoResposta(resposta);
         return ResponseEntity.created(uri).body(dto);
     }
+
+
 }

@@ -3,8 +3,8 @@ package com.iaco.forumhub.controller;
 
 import com.iaco.forumhub.domain.usuario.DadosAutenticacao;
 import com.iaco.forumhub.domain.usuario.Usuario;
-import com.iaco.forumhub.infra.TokenJWTDTO;
-import com.iaco.forumhub.infra.TokenService;
+import com.iaco.forumhub.infra.security.TokenJWTDTO;
+import com.iaco.forumhub.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
