@@ -8,6 +8,7 @@ import com.iaco.forumhub.domain.resposta.Resposta;
 import com.iaco.forumhub.domain.topico.*;
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
 import com.iaco.forumhub.infra.TokenService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;
 
+@SecurityRequirement(name = "bearer-key")
 @RestController
 @RequestMapping("/respostas")
 public class RespostaController {

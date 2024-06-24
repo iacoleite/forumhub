@@ -5,6 +5,7 @@ import com.iaco.forumhub.domain.ValidacaoException;
 import com.iaco.forumhub.domain.curso.CursoRepositorio;
 import com.iaco.forumhub.domain.topico.*;
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +22,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
-//@SecurityRequirement(name = "bearer-key")
+@SecurityRequirement(name = "bearer-key")
 @RestController
 @RequestMapping("/topicos")
 public class TopicoController {
