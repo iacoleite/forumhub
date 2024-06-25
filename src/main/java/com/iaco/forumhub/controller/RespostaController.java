@@ -1,11 +1,10 @@
 package com.iaco.forumhub.controller;
 
-import com.iaco.forumhub.domain.ValidacaoException;
 import com.iaco.forumhub.domain.resposta.DadosDetalhamentoResposta;
-import com.iaco.forumhub.domain.resposta.RespostaRepository;
 import com.iaco.forumhub.domain.resposta.DadosNovaResposta;
 import com.iaco.forumhub.domain.resposta.Resposta;
-import com.iaco.forumhub.domain.topico.*;
+import com.iaco.forumhub.domain.resposta.RespostaRepository;
+import com.iaco.forumhub.domain.topico.TopicoService;
 import com.iaco.forumhub.domain.usuario.AuthenticationService;
 import com.iaco.forumhub.domain.usuario.UsuarioRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @SecurityRequirement(name = "bearer-key")
 @RestController
@@ -32,9 +30,6 @@ public class RespostaController {
 
     @Autowired
     private TopicoService topicoService;
-
-    @Autowired
-    private TopicoRepository topicoRepository;
 
     @Autowired
     private RespostaRepository respostaRepository;

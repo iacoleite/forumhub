@@ -49,7 +49,10 @@ public class TopicoController {
     @GetMapping
     public ResponseEntity getAllTopicos(@PageableDefault(size = 2, sort={"dataCriacao"},
             direction = Sort.Direction.DESC)Pageable paginacao, PagedResourcesAssembler assembler) {
-        var page = topicoRepository.findAll(paginacao).map(DadosListagemTopico::new);
+        var page = topicoRepository.findAllByAtivoTrue(paginacao).map(DadosListagemTopico::new);
+
+        // to get all topics (if I want to implement a admin_role this could be useful)
+        //        var page = topicoRepository.findAll(paginacao).map(DadosListagemTopico::new);
 
         return ResponseEntity.ok(assembler.toModel(page));
     }
