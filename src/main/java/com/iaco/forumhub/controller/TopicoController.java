@@ -1,6 +1,6 @@
 package com.iaco.forumhub.controller;
 
-import com.iaco.forumhub.domain.DadosAtualizarTopico;
+import com.iaco.forumhub.domain.topico.DadosAtualizarTopico;
 import com.iaco.forumhub.domain.topico.*;
 import com.iaco.forumhub.domain.usuario.AuthenticationService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;

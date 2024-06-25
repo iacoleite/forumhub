@@ -1,6 +1,5 @@
 package com.iaco.forumhub.domain.topico;
 
-import com.iaco.forumhub.domain.DadosAtualizarTopico;
 import com.iaco.forumhub.domain.ValidacaoException;
 import com.iaco.forumhub.domain.curso.Curso;
 import com.iaco.forumhub.domain.curso.CursoRepositorio;
