@@ -33,4 +33,5 @@ Sinta-se à vontade para abrir um pull request ou uma issue.
 ### Licença
 Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
 
+![Badge-Spring](https://github.com/iacoleite/forumhub/assets/154355940/8f5ccb90-07cc-4f69-b5bf-03ff120456c0)
 
